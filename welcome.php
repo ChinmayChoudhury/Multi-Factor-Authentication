@@ -1,4 +1,18 @@
+<?php
+  session_start();
+  date_default_timezone_set("Asia/Calcutta");
 
+  include_once 'pdo.php';
+include_once 'header.php';
+print_r($_SESSION);
+
+  if (isset($_SESSION['flag'])) {
+    $_SESSION['flag']= "no";
+    // $_SESSION['chances'] = 3;
+  }
+
+
+?>
 
 
 
@@ -65,7 +79,7 @@ hr {
 <h1 style="font-family: Cambria; color: blue; margin-left: 18px; margin-bottom: 0px"> CnC National Bank</h1>
 
 
-<h2>Welcome {username}!</h2>
+<h2>Welcome <?= $_SESSION['user'] ?>!</h2>
 <a class="button button2" name="button2" href="logout.php"><b>LOGOUT</b></a>
 
 <br><br>
@@ -76,18 +90,26 @@ hr {
         echo "<p style='color:green'>" . $_SESSION['succ'] . "</p>";
         unset($_SESSION['succ']);
       }
-      if (isset($_SESSION['error'])) {
-        echo "<p style='color:red'>" . $_SESSION['error'] . "</p>";
-        unset($_SESSION['error']);
+      if (isset($_SESSION['err'])) {
+        echo "<p style='color:red'>" . $_SESSION['err'] . "</p>";
+        unset($_SESSION['err']);
       }
-
+      if (isset($_SESSION['block_err'])) {
+        echo "<p style='color:red'>" . $_SESSION['block_err'] . "</p>";
+        unset($_SESSION['block_err']);
+      }
     ?>
-<button class="button button1" name="button1"><b>TRANSFER MONEY</b></button>
+<a href="factorone.php"><button class="button button1" name="button1"><b>TRANSFER MONEY</b></button>
+</a>
 <br><br>
 
 <hr>
 
-
+<?php
+  $stmt = $pdo->prepare('SELECT * FROM `users` WHERE `userid`=:usridvar');
+  $stmt->execute(array(":usridvar"=>$_SESSION['usrid']));
+  $row = $stmt->fetch(PDO::FETCH_ASSOC);
+?>
 
 
 
@@ -98,9 +120,9 @@ hr {
     <th>Balance</th>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><?= $row['username'] ?></td>
+    <td><?= $row['accid'] ?></td>
+    <td><?= $row['amount'] ?></td>
   </tr>
   
 </table>

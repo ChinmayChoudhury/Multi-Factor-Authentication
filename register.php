@@ -3,16 +3,18 @@
   include_once 'pdo.php';
   if (isset($_POST['submit'])) {
     // print_r( $_POST);
+    echo "post recieved";
+    $pass_hash = password_hash($_POST['psw'], PASSWORD_DEFAULT);
     $stmt = $pdo->prepare("INSERT INTO `users`(`username`, `password`, `secq`, `secans`) VALUES (:usern,:pswd,:sqvar,:savar)");
     $stmt->execute(array(
       ":usern"=>$_POST['username'],
-      ':pswd'=>$_POST['psw'],
+      ':pswd'=>$pass_hash,
       ':sqvar'=>$_POST['secq'],
       ':savar'=>$_POST['secans'],
     ));
     $_SESSION['user'] = $_POST['username'];
     $_SESSION['succ'] = "Account created successfully.";
-
+    header("Location: imagereg.php");return;
 
   }
 ?>
@@ -79,7 +81,7 @@ a {
 </style>
 <body>
 
-<h1 style="font-family: Cambria; color: blue; margin-left: 18px; margin-bottom: 0px"> CnC National Bank</h1>
+<h1 style="font-family: Cambria; color: blue; margin-left: 18px; margin-bottom: 0px"> PnC National Bank</h1>
 <form method="post" id="form">
   <div class="container">
     <h1>Register</h1>
