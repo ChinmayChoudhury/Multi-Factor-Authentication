@@ -4,7 +4,7 @@
   include_once 'header.php';
   date_default_timezone_set("Asia/Calcutta");
 
-  print_r($_SESSION);
+  // print_r($_SESSION);
 
   if (isset($_SESSION['reattempttime'])) {
     echo "in if";
@@ -42,7 +42,7 @@
         $_SESSION['flag'] = "no";
         $_SESSION['chances'] = 3;
         $_SESSION['reattempttime']= time() + 5;
-        $_SESSION['block_err'] = "You have exceeded number of attempts. Your account has been locked till " . date("Y-m-d H:i:s",$_SESSION['reattempttime']);
+        $_SESSION['block_err'] = "You have exceeded number of attempts. Your account has been locked till " . date("Y-m-d H:i:s",$_SESSION['reattempttime']) . ". A notification mail of the action has been sent to your registered email";
         unset($_SERVER['QUERY_STRING']);
         header("Location: welcome.php"); return;
       }

@@ -1,6 +1,6 @@
 <?php
 if (isset($_SESSION['LAST_ACTIVITY'])) {
-	if (time() - $_SESSION['LAST_ACTIVITY'] > 1800) {
+	if (time() - $_SESSION['LAST_ACTIVITY'] > 900) {
 			session_unset();
 			session_destroy();
 		}

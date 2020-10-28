@@ -1,14 +1,14 @@
 <?php
   session_start();
   date_default_timezone_set("Asia/Calcutta");
-  print_r($_SESSION);
+  // print_r($_SESSION);
   include_once 'header.php';
   include 'pdo.php';
   if (isset($_SESSION['reattempttime'])) {
-    echo "in if";
+    // echo "in if";
     echo time() - $_SESSION['reattempttime'];
     if ($_SESSION['reattempttime'] - time()  > 0) {
-      echo "inif2";
+      // echo "inif2";
       $_SESSION['block_err'] = 'Your account has been blocked till ' . date("Y-m-d h:i:s",$_SESSION['reattempttime']) . '. Please try afterwards';
       header("Location: welcome.php"); return;
     }
@@ -117,7 +117,7 @@ input[type=text]{
 <h3>Please answer the security question</h3>
 <?php
   if (isset($_SESSION['err'])) {
-    echo "<p style='color:red'>".$_SESSION['err'] ."<b>Chances remaining: " .$_SESSION['chances'] . "</b></p>";
+    echo "<p style='color:red'>".$_SESSION['err'] ."<b>. Chances remaining: " .$_SESSION['chances'] . "</b></p>";
     unset($_SESSION['err']);
   }
 

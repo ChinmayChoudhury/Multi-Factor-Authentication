@@ -1,7 +1,13 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['user'])) {
+  $_SESSION['err'] = "Please log in first";
+  header("Location: index.php"); return;
+}
+
 // print_r($_SERVER);
-print_r($_SESSION);
+// print_r($_SESSION);
   // include_once 'header.php';
     if (isset($_SERVER['QUERY_STRING'])) {
       print_r($_SERVER['QUERY_STRING']);

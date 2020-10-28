@@ -4,7 +4,7 @@
 
   include_once 'pdo.php';
 include_once 'header.php';
-print_r($_SESSION);
+// print_r($_SESSION);
 
   if (isset($_SESSION['flag'])) {
     $_SESSION['flag']= "no";
@@ -76,7 +76,7 @@ hr {
 </head>
 
 <body>
-<h1 style="font-family: Cambria; color: blue; margin-left: 18px; margin-bottom: 0px"> CnC National Bank</h1>
+<h1 style="font-family: Cambria; color: blue; margin-left: 18px; margin-bottom: 0px"> PnC National Bank</h1>
 
 
 <h2>Welcome <?= $_SESSION['user'] ?>!</h2>
@@ -84,7 +84,7 @@ hr {
 
 <br><br>
 
-<p style="font-family: Century Gothic; margin-left: 18px;">"There are some things that money can’t buy. For everything else there’s CnC."</p><br>
+<p style="font-family: Century Gothic; margin-left: 18px;">"There are some things that money can’t buy. For everything else there’s PnC."</p><br>
 <?php
       if (isset($_SESSION['succ'])) {
         echo "<p style='color:green'>" . $_SESSION['succ'] . "</p>";

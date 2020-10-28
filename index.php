@@ -1,5 +1,6 @@
 <?php
   session_start();
+  print_r($_SESSION);
   include_once 'pdo.php';
   if (isset($_POST['login'])) {
     if (strlen($_POST['username'])<1 || strlen($_POST['psw'])<1) {
@@ -19,12 +20,12 @@
       }
       else{
         $_SESSION['err'] = "Wrong password";
-        header("Location:login.php"); return;
+        header("Location:index.php"); return;
       }
     }
     else{
       $_SESSION['err'] = "Username not found";
-      header("Location:login.php"); return;
+      header("Location:index.php"); return;
     }
   }
 
