@@ -8,7 +8,7 @@ include_once 'header.php';
 
   if (isset($_SESSION['flag'])) {
     $_SESSION['flag']= "no";
-    // $_SESSION['chances'] = 3;
+    $_SESSION['chances'] = 3;
   }
 
 

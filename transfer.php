@@ -10,7 +10,7 @@ if (!isset($_SESSION['user'])) {
 // print_r($_SESSION);
   // include_once 'header.php';
     if (isset($_SERVER['QUERY_STRING'])) {
-      print_r($_SERVER['QUERY_STRING']);
+      // print_r($_SERVER['QUERY_STRING']);
     }
 
   if (isset($_POST['submit'])) {
@@ -75,7 +75,7 @@ hr {
 
 <body>
 
-<h1 style="font-family: Cambria; color: blue; margin-left: 18px; margin-bottom: 0px"> CnC National Bank</h1>
+<h1 style="font-family: Cambria; color: blue; margin-left: 18px; margin-bottom: 0px"> PnC National Bank</h1>
 <br>
 <hr>
 

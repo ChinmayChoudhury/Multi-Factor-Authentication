@@ -134,7 +134,7 @@ a {
 </style>
 <body>
 
-<h1 style="font-family: Cambria; color: blue; margin-left: 18px; margin-bottom: 0px"> CnC National Bank</h1>
+<h1 style="font-family: Cambria; color: blue; margin-left: 18px; margin-bottom: 0px"> PnC National Bank</h1>
   <div class="container">
     <h1>Third Authentication</h1>
     <p>Verify image</p>

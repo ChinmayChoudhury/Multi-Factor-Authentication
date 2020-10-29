@@ -66,7 +66,7 @@ a {
 </style>
 <body>
 
-<h1 style="font-family: Cambria; color: blue; margin-left: 18px; margin-bottom: 0px"> CnC National Bank</h1>
+<h1 style="font-family: Cambria; color: blue; margin-left: 18px; margin-bottom: 0px"> PnC National Bank</h1>
   <div class="container">
     <h1>Register</h1>
     <p>Please select an image and click at a point in a image. Remember where you clicked as you will be asked to click on the same image at the same point during multi-factor authentication</p>

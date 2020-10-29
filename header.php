@@ -1,4 +1,6 @@
 <?php
+
+//session timeout
 if (isset($_SESSION['LAST_ACTIVITY'])) {
 	if (time() - $_SESSION['LAST_ACTIVITY'] > 900) {
 			session_unset();
@@ -7,9 +9,10 @@ if (isset($_SESSION['LAST_ACTIVITY'])) {
 }
 $_SESSION['LAST_ACTIVITY'] = time();
 
+//check user logged in 
 if (!isset($_SESSION['user'])) {
 	$_SESSION['err'] = "Please log in first";
-	header("Location: login.php"); return;
+	header("Location: index.php"); return;
 }
 
 

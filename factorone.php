@@ -6,7 +6,7 @@
   include 'pdo.php';
   if (isset($_SESSION['reattempttime'])) {
     // echo "in if";
-    echo time() - $_SESSION['reattempttime'];
+    // echo time() - $_SESSION['reattempttime'];
     if ($_SESSION['reattempttime'] - time()  > 0) {
       // echo "inif2";
       $_SESSION['block_err'] = 'Your account has been blocked till ' . date("Y-m-d h:i:s",$_SESSION['reattempttime']) . '. Please try afterwards';
@@ -33,7 +33,7 @@
       if ($_SESSION['chances']==0) {
         $_SESSION['flag'] = "no";
         $_SESSION['chances'] = 3;
-        $_SESSION['reattempttime']= time() + 60;
+        $_SESSION['reattempttime']= time() + 15;
         $_SESSION['block_err'] = "You have exceeded number of attempts. Your account has been locked till " . date("Y-m-d H:i:s",$_SESSION['reattempttime']);
         header("Location: welcome.php"); return;
       }
@@ -108,7 +108,7 @@ input[type=text]{
 ?>
 
 
-<h1 style="font-family: Cambria; color: blue; margin-left: 18px; margin-bottom: 0px"> CnC National Bank</h1>
+<h1 style="font-family: Cambria; color: blue; margin-left: 18px; margin-bottom: 0px"> PnC National Bank</h1>
 <br>
 <hr>
 

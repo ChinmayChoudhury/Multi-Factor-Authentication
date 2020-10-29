@@ -1,6 +1,6 @@
 <?php
   session_start();
-  print_r($_SESSION);
+  // print_r($_SESSION);
   include_once 'pdo.php';
   if (isset($_POST['login'])) {
     if (strlen($_POST['username'])<1 || strlen($_POST['psw'])<1) {
