@@ -1,5 +1,6 @@
-<?php
+<?php 
+	session_start();
 	session_destroy();
-	session_unset();	
-	header("Location: index.php");
+	//change the header location to blogpage
+	header('Location: index.php');
 ?>
